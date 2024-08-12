@@ -39,7 +39,7 @@
             <div class="rule-container">
                 <div class="rule">
                     <h3>1. Preparación</h3>
-                    <p>Cada jugador aporta al "case" (apuesta inicial). Mínimo $200.</p>
+                    <p>Cada jugador aporta al "case" (apuesta inicial). Mínimo $200 (pueden ser $100 si estan muy princesitas).</p>
                 </div>
                 <div class="rule">
                     <h3>2. Reparto</h3>
@@ -47,34 +47,63 @@
                 </div>
                 <div class="rule">
                     <h3>3. Decisión de jugar</h3>
-                    <p>Cada jugador decide si juega o no esa mano. El repartidor pregunta: "¿Va o no va?"</p>
+                    <p>Siempre que hay un jugador lulo cada jugador decide si juega o no esa mano. El repartidor pregunta: "¿Va o no va?"</p>
                 </div>
                 <div class="rule">
                     <h3>4. Cambio de cartas</h3>
-                    <p>Los jugadores pueden cambiar las cartas que deseen por nuevas del mazo.</p>
+                    <p>Los jugadores pueden cambiar una vez las cartas que deseen por nuevas del mazo. El repartidor pregunta: ¿Cuantas cambia?</p>
                 </div>
-                <div class="rule">
+                <div class="rule" id="rule-5">
                     <h3>5. Desarrollo del juego</h3>
                     <p>El juego consta de 3 rondas. En cada ronda:</p>
                     <ul>
-                        <li>El primer jugador tira una carta (excepto el as del palo de la mesa en la primera ronda).</li>
-                        <li>Los demás deben seguir el palo de la primera carta jugada o el palo de la mesa.</li>
+                        <li>El primer jugador tira una carta cualquiera (excepto si es la primera ronda del juego y este jugador tiene el as del palo de la mesa, en ese caso es obligatorio jugarlo).</li>
+                        <li>Los demás deben seguir el palo de la primera carta jugada o el palo de la mesa siempre en ese orden.</li>
                         <li>Si no tienen cartas de esos palos, pueden tirar cualquier carta.</li>
                     </ul>
                 </div>
                 <div class="rule">
-                    <h3>6. Ganador de la mano</h3>
+                    <h3>6. Regla espacial del 7</h3>
+                    <p>Si un jugador tiene el 7 del palo de la mesa en su mano, puede cambiar esta carta por la carta de la mesa cuando sea su turno y quiera utilizar esta carta.</p>
+                    <p class="nota">NOTA: Si el jugador que comienza la partida tiene el 7 y en la mesa esta el as es obligatorio jugar la carta y cambiarla, de acuerdo con el primer item de la regla 5</p>
+                </div>
+                <div class="rule">
+                    <h3>7. Ganador de la mano</h3>
                     <p>Gana la mano quien juegue la carta más alta, siguiendo esta jerarquía:</p>
                     <ol>
                         <li>Carta de mayor valor del palo de la mesa.</li>
                         <li>Carta del palo de la mesa.</li>
                         <li>Carta de mayor valor del palo que manda.</li>
                     </ol>
+                    <p>Para saber cual carta tiene mayor valor puede ver <a href="#puntuaciones">Puntuaciones</a></p>
                 </div>
                 <div class="rule">
-                    <h3>7. El Lulo</h3>
+                    <h3>8. El Lulo</h3>
                     <p>Los jugadores que no ganen ninguna mano en una ronda son "lulos" y deben aportar al case en la siguiente partida.</p>
                 </div>
+                <div class="rule">
+                    <h3>9. Renunciar</h3>
+                    <p>EL jugador que renuncia debe poner inmediatamente todo el dinero que se encuentre sobre la mesa. Se considera renuncia:</p>
+                    <ul>
+                        <li>Robar el turno a otro jugador</li>
+                        <li>Jugar la carta de un palo que no se puede jugar según lo estipulado en <a href="#rule-5">5. Desarrollo del juego</a> </li>
+                        <li>No jugar el as si es el jugador que comienza la partida y este lo tiene en su mano</li>
+                    </ul>
+                </div>
+                <div class="rule">
+                    <h3>10. Fin del juego</h3>
+                    <p>Ningún jugador puede levantarse de la mesa si todavia hay jugadores lulos en el juego. En caso de que se quiera retirar, debe pagar la cantidad total de la apuesta que se encuentre sobre la mesa.</p>
+                </div>
+                <div class="rule">
+                    <h3>11. Preguntas indebidas</h3>
+                    <p>El jugador que pregunte maricadas debe poner el valor del case en la mesa. Se consideran preguntas maricas:</p>
+                    <ul>
+                        <li>Preguntar ¿Cuantas cambia? en lugar de ¿Va o no va? cuando hay un lulo en la mesa</li>
+                        <li>Preguntar ¿Va o no va? cuando no hay un lulo en la mesa</li>
+                        <li>¿Preguntar ¿Quien reparte?</li>
+                    </ul>
+                </div>
+                
             </div>
         </section>
 
