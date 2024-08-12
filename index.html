@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lulo - El Juego de Cartas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Lulo</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#reglas">Reglas</a></li>
+                <li><a href="#puntuaciones">Puntuaciones</a></li>
+                <li><a href="#jugar">Jugar</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <h1>Bienvenido a Lulo</h1>
+            <p>El emocionante juego de cartas con la baraja española</p>
+            <div class="card-display">
+                <!-- Las cartas se añadirán dinámicamente con JavaScript -->
+            </div>
+        </section>
+
+        <section id="reglas" class="rules">
+            <h2>Reglas del Juego</h2>
+            <div class="rule-container">
+                <div class="rule">
+                    <h3>1. Preparación</h3>
+                    <p>Cada jugador aporta al "case" (apuesta inicial). Mínimo $200.</p>
+                </div>
+                <div class="rule">
+                    <h3>2. Reparto</h3>
+                    <p>Se reparten 3 cartas a cada jugador y se coloca una carta boca arriba en el centro, llamada "mesa".</p>
+                </div>
+                <div class="rule">
+                    <h3>3. Decisión de jugar</h3>
+                    <p>Cada jugador decide si juega o no esa mano. El repartidor pregunta: "¿Va o no va?"</p>
+                </div>
+                <div class="rule">
+                    <h3>4. Cambio de cartas</h3>
+                    <p>Los jugadores pueden cambiar las cartas que deseen por nuevas del mazo.</p>
+                </div>
+                <div class="rule">
+                    <h3>5. Desarrollo del juego</h3>
+                    <p>El juego consta de 3 rondas. En cada ronda:</p>
+                    <ul>
+                        <li>El primer jugador tira una carta (excepto el as del palo de la mesa en la primera ronda).</li>
+                        <li>Los demás deben seguir el palo de la primera carta jugada o el palo de la mesa.</li>
+                        <li>Si no tienen cartas de esos palos, pueden tirar cualquier carta.</li>
+                    </ul>
+                </div>
+                <div class="rule">
+                    <h3>6. Ganador de la mano</h3>
+                    <p>Gana la mano quien juegue la carta más alta, siguiendo esta jerarquía:</p>
+                    <ol>
+                        <li>Carta de mayor valor del palo de la mesa.</li>
+                        <li>Carta del palo de la mesa.</li>
+                        <li>Carta de mayor valor del palo que manda.</li>
+                    </ol>
+                </div>
+                <div class="rule">
+                    <h3>7. El Lulo</h3>
+                    <p>Los jugadores que no ganen ninguna mano en una ronda son "lulos" y deben aportar al case en la siguiente partida.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="puntuaciones" class="scores">
+            <h2>Puntuaciones</h2>
+            <div class="score-container">
+                <div class="score-item">
+                    <h3>11 puntos</h3>
+                    <div class="card-row">
+                        <div class="card" style="background-image: url('images/oros1.jpg')"></div>
+                        <div class="card" style="background-image: url('images/copas1.jpg')"></div>
+                        <div class="card" style="background-image: url('images/espadas1.jpg')"></div>
+                        <div class="card" style="background-image: url('images/bastos1.jpg')"></div>
+                    </div>
+                </div>
+                <div class="score-item">
+                    <h3>10 puntos</h3>
+                    <div class="card-row">
+                        <div class="card" style="background-image: url('images/oros3.jpg')"></div>
+                        <div class="card" style="background-image: url('images/copas3.jpg')"></div>
+                        <div class="card" style="background-image: url('images/espadas3.jpg')"></div>
+                        <div class="card" style="background-image: url('images/bastos3.jpg')"></div>
+                    </div>
+                </div>
+                <div class="score-item">
+                    <h3>4 puntos</h3>
+                    <div class="card-row">
+                        <div class="card" style="background-image: url('images/oros12.jpg')"></div>
+                        <div class="card" style="background-image: url('images/copas12.jpg')"></div>
+                        <div class="card" style="background-image: url('images/espadas12.jpg')"></div>
+                        <div class="card" style="background-image: url('images/bastos12.jpg')"></div>
+                    </div>
+                </div>
+                <div class="score-item">
+                    <h3>3 puntos</h3>
+                    <div class="card-row">
+                        <div class="card" style="background-image: url('images/oros11.jpg')"></div>
+                        <div class="card" style="background-image: url('images/copas11.jpg')"></div>
+                        <div class="card" style="background-image: url('images/espadas11.jpg')"></div>
+                        <div class="card" style="background-image: url('images/bastos11.jpg')"></div>
+                    </div>
+                </div>
+                <div class="score-item">
+                    <h3>2 puntos</h3>
+                    <div class="card-row">
+                        <div class="card" style="background-image: url('images/oros10.jpg')"></div>
+                        <div class="card" style="background-image: url('images/copas10.jpg')"></div>
+                        <div class="card" style="background-image: url('images/espadas10.jpg')"></div>
+                        <div class="card" style="background-image: url('images/bastos10.jpg')"></div>
+                    </div>
+                </div>
+                <div class="score-item">
+                    <h3>0 puntos</h3>
+                    <p>Las demás cartas (2, 4, 5, 6, 7, 8, 9) no tienen valor en puntos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="jugar" class="play">
+            <h2>¡A Jugar!</h2>
+            <div class="game-simulation">
+                <button id="dealCards">Repartir Cartas</button>
+                <div class="player-hands">
+                    <!-- Las manos de los jugadores se añadirán aquí -->
+                </div>
+                <div class="table-card">
+                    <!-- La carta de la mesa se añadirá aquí -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Lulo - El Juego de Cartas. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
