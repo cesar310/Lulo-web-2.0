@@ -187,17 +187,50 @@ footer {
     align-items: center;
     margin-top: 2rem;
   }
+
+  .game-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
   
   .opponents {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   
   .opponent {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .opponent-hand, .opponent-played {
+    display: flex;
     justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .table-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .played-cards {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .player-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .table-card {
@@ -209,21 +242,28 @@ footer {
     justify-content: center;
   }
   
+  .player-hand, .player-played {
+    display: flex;
+    justify-content: center;
+  }
+  
   .card {
-    width: 80px;
-    height: 120px;
-    margin: 0 5px;
-    cursor: pointer;
+    width: 60px;
+    height: 90px;
+    margin: 0 2px;
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
   }
   
   .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
   
   .card.selected {
-    transform: translateY(-20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   }
   
   .game-info {
@@ -258,6 +298,19 @@ footer {
     .burger {
         display: block;
     }
+
+    .opponents {
+        flex-direction: column;
+      }
+    
+      .opponent {
+        margin-bottom: 1rem;
+      }
+    
+      .card {
+        width: 40px;
+        height: 60px;
+      }
 }
 
 .nav-active {

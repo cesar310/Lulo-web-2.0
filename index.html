@@ -166,14 +166,29 @@
             <h2>¡A Jugar!</h2>
             <div class="game-simulation">
               <button id="startGame">Iniciar Juego</button>
-              <div class="game-area">
+              <div class="game-table">
                 <div class="opponents">
-                  <div class="opponent" id="opponent1"></div>
-                  <div class="opponent" id="opponent2"></div>
-                  <div class="opponent" id="opponent3"></div>
+                  <div class="opponent" id="opponent1">
+                    <div class="opponent-hand"></div>
+                    <div class="opponent-played"></div>
+                  </div>
+                  <div class="opponent" id="opponent2">
+                    <div class="opponent-hand"></div>
+                    <div class="opponent-played"></div>
+                  </div>
+                  <div class="opponent" id="opponent3">
+                    <div class="opponent-hand"></div>
+                    <div class="opponent-played"></div>
+                  </div>
                 </div>
-                <div class="table-card"></div>
-                <div class="player-hand"></div>
+                <div class="table-center">
+                  <div class="table-card"></div>
+                  <div class="played-cards"></div>
+                </div>
+                <div class="player-area">
+                  <div class="player-hand"></div>
+                  <div class="player-played"></div>
+                </div>
               </div>
               <div class="game-info">
                 <p id="gameStatus"></p>
