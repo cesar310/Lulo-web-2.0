@@ -133,18 +133,25 @@
             </div>
         </section>
 
-        <section id="jugar" class="play">
+        <section id="jugar" class="section play">
             <h2>¡A Jugar!</h2>
             <div class="game-simulation">
-                <button id="dealCards">Repartir Cartas</button>
-                <div class="player-hands">
-                    <!-- Las manos de los jugadores se añadirán aquí -->
+              <button id="startGame">Iniciar Juego</button>
+              <div class="game-area">
+                <div class="opponents">
+                  <div class="opponent" id="opponent1"></div>
+                  <div class="opponent" id="opponent2"></div>
+                  <div class="opponent" id="opponent3"></div>
                 </div>
-                <div class="table-card">
-                    <!-- La carta de la mesa se añadirá aquí -->
-                </div>
+                <div class="table-card"></div>
+                <div class="player-hand"></div>
+              </div>
+              <div class="game-info">
+                <p id="gameStatus"></p>
+                <p id="turnInfo"></p>
+              </div>
             </div>
-        </section>
+          </section>
     </main>
 
     <footer>
