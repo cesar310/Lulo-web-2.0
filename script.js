@@ -6,10 +6,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const gameStatus = document.getElementById('gameStatus');
     const turnInfo = document.getElementById('turnInfo');
     const opponents = document.querySelectorAll('.opponent');
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
 
+    burger.addEventListener('click', () => {
+        // Toggle Nav
+        nav.classList.toggle('nav-active');
+
+        // Animate Links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+
+        // Burger Animation
+        burger.classList.toggle('toggle');
+    });
+
+    const cardDisplay = document.querySelector('.card-display');
     const palos = ['oros', 'copas', 'bastos', 'espadas'];
     const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
+    for (let i = 0; i < 5; i++) { // Mostrar 5 cartas aleatorias
+        const palo = palos[Math.floor(Math.random() * palos.length)];
+        const numero = numeros[Math.floor(Math.random() * numeros.length)];
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.backgroundImage = `url('images/${palo}${numero}.jpg')`;
+        card.style.backgroundSize = 'cover';
+        cardDisplay.appendChild(card);
+    }
+    
     let playerCards = [];
     let opponentCards = [[], [], []];
     let currentTurn = 0;
