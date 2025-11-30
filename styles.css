@@ -102,13 +102,15 @@ h1, h2 {
 }
 
 .card {
-    width: 150px;
-    height: 2250px;
+    width: 120px;
+    height: 180px;
     background-color: var(--card-color);
     border-radius: 10px;
     margin: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    background-size: cover;
+    background-position: center;
 }
 
 .card:hover {
@@ -130,6 +132,395 @@ h1, h2 {
 
 .game-simulation {
     text-align: center;
+    width: 100%;
+}
+
+/* ========== ESTILOS DEL JUEGO MEJORADOS ========== */
+.game-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-table {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #1a472a 100%);
+    border-radius: 20px;
+    padding: 15px 20px;
+    box-shadow: 
+        inset 0 0 50px rgba(0,0,0,0.3),
+        0 10px 30px rgba(0,0,0,0.4);
+    border: 6px solid #654321;
+    width: 100%;
+    position: relative;
+}
+
+.game-table::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 2px solid rgba(255,215,0,0.3);
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+/* Fila de oponentes */
+.opponents-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.opponent {
+    display: flex;
+    flex: 1;
+    background: rgba(0,0,0,0.25);
+    border-radius: 10px;
+    padding: 8px;
+    gap: 8px;
+    align-items: center;
+}
+
+.opponent-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+}
+
+.opponent-label {
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.75rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    white-space: nowrap;
+}
+
+.opponent-stats {
+    color: #ffd700;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.opponent-stats .score {
+    font-size: 1rem;
+}
+
+.opponent-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.opponent-hand {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+/* Centro de la mesa */
+.table-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 10px 0;
+}
+
+.mesa-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mesa-label {
+    color: #ffd700;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.table-card {
+    position: relative;
+}
+
+.table-card .card {
+    border: 3px solid gold;
+    box-shadow: 0 0 15px rgba(255,215,0,0.5);
+}
+
+.played-cards-area {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(0,0,0,0.15);
+    border-radius: 10px;
+    min-width: 300px;
+    min-height: 90px;
+}
+
+.played-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.played-card-label {
+    color: #fff;
+    font-size: 0.65rem;
+    margin-top: 3px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Área del jugador */
+.player-row {
+    display: flex;
+    align-items: center;
+    background: rgba(0,0,0,0.25);
+    border-radius: 10px;
+    padding: 10px 15px;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.player-label {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.player-stats {
+    color: #ffd700;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.player-stats .score {
+    font-size: 1.2rem;
+}
+
+.player-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.player-hand {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Cartas ganadas */
+.won-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+    margin-top: 4px;
+    max-width: 80px;
+}
+
+.won-cards .mini-card {
+    width: 18px;
+    height: 27px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.lulo-indicator {
+    color: #ff4081;
+    font-weight: bold;
+    font-size: 0.7rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Cartas del juego */
+.game-table .card {
+    width: 55px;
+    height: 82px;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid #fff;
+}
+
+.game-table .card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.game-table .card.selected {
+    transform: translateY(-10px) scale(1.08);
+    box-shadow: 0 10px 20px rgba(255,215,0,0.6);
+    border-color: gold;
+}
+
+.game-table .card.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.game-table .card.disabled:hover {
+    transform: none;
+}
+
+.game-table .card.winning {
+    border-color: #00ff00;
+    box-shadow: 0 0 15px rgba(0,255,0,0.6);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 15px rgba(0,255,0,0.6); }
+    50% { box-shadow: 0 0 25px rgba(0,255,0,0.9); }
+}
+
+/* Cartas de oponentes (boca abajo) */
+.opponent-hand .card {
+    width: 35px;
+    height: 52px;
+}
+
+/* Carta de la mesa */
+.table-card .card {
+    width: 65px;
+    height: 97px;
+}
+
+/* Cartas jugadas en el centro */
+.played-cards-area .card {
+    width: 50px;
+    height: 75px;
+}
+
+/* Barra de estado del juego */
+.game-status-bar {
+    background: var(--card-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#gameStatus {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+#turnInfo {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin: 5px 0 0 0;
+}
+
+/* Botón del 7 */
+.swap-seven-btn {
+    background-color: #9c27b0;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: all 0.3s ease;
+}
+
+.swap-seven-btn:hover {
+    background-color: #7b1fa2;
+    transform: scale(1.05);
+}
+
+/* Fase de cambio de cartas */
+.swap-phase {
+    background: rgba(0,0,0,0.3);
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.swap-instructions {
+    color: #ffd700;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.swap-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.swap-btn {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.swap-btn:hover {
+    background-color: #1976D2;
+    transform: scale(1.05);
+}
+
+.swap-btn.skip {
+    background-color: #607D8B;
+}
+
+.swap-btn.skip:hover {
+    background-color: #455A64;
+}
+
+/* Carta marcada para cambiar */
+.game-table .card.marked-for-swap {
+    border-color: #ff5722;
+    box-shadow: 0 0 15px rgba(255, 87, 34, 0.7);
+    transform: translateY(-8px);
 }
 
 button {
@@ -181,100 +572,10 @@ footer {
     margin: 5px;
 }
 
-.game-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
-  }
-
-  .game-table {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
-  }
-  
-  .opponents {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  
-  .opponent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .opponent-hand, .opponent-played {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-  }
-  
-  .table-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .played-cards {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-  }
-  
-  .player-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .table-card {
-    margin-bottom: 2rem;
-  }
-  
-  .player-hand {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .player-hand, .player-played {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .card {
-    width: 60px;
-    height: 90px;
-    margin: 0 2px;
-    background-size: cover;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .card.selected {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  }
-  
-  .game-info {
-    margin-top: 2rem;
-    text-align: center;
-  }
-
-  .nota {
+.nota {
     color: red;
     font-size: 0.8rem;
-  }
+}
 
 @media screen and (max-width: 768px) {
     .nav-links {
@@ -299,18 +600,140 @@ footer {
         display: block;
     }
 
-    .opponents {
+    /* Juego en móvil */
+    .opponents-row {
         flex-direction: column;
-      }
+        gap: 8px;
+    }
     
-      .opponent {
-        margin-bottom: 1rem;
-      }
+    .opponent {
+        flex-direction: row;
+        padding: 6px 10px;
+    }
+
+    .opponent-info {
+        min-width: 60px;
+    }
+
+    .opponent-label {
+        font-size: 0.65rem;
+    }
+
+    .opponent-stats {
+        font-size: 0.7rem;
+    }
+
+    .opponent-stats .score {
+        font-size: 0.85rem;
+    }
+
+    .won-cards {
+        max-width: 60px;
+    }
+
+    .won-cards .mini-card {
+        width: 14px;
+        height: 21px;
+    }
     
-      .card {
+    .game-table .card {
+        width: 45px;
+        height: 67px;
+    }
+
+    .table-card .card {
+        width: 55px;
+        height: 82px;
+    }
+
+    .opponent-hand .card {
+        width: 28px;
+        height: 42px;
+    }
+
+    .played-cards-area {
+        min-width: auto;
+        gap: 5px;
+        padding: 8px;
+    }
+
+    .played-cards-area .card {
         width: 40px;
         height: 60px;
-      }
+    }
+
+    .table-center {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .player-row {
+        flex-direction: column;
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .player-info {
+        flex-direction: row;
+        gap: 15px;
+        min-width: auto;
+    }
+
+    .player-hand {
+        gap: 8px;
+    }
+
+    .game-table {
+        padding: 10px;
+        border-width: 4px;
+    }
+
+    .mesa-label {
+        font-size: 0.75rem;
+    }
+
+    .game-status-bar {
+        padding: 8px 12px;
+    }
+
+    #gameStatus {
+        font-size: 0.85rem;
+    }
+
+    #turnInfo {
+        font-size: 0.75rem;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media screen and (max-width: 400px) {
+    .game-table .card {
+        width: 38px;
+        height: 57px;
+    }
+
+    .table-card .card {
+        width: 48px;
+        height: 72px;
+    }
+
+    .opponent-hand .card {
+        width: 24px;
+        height: 36px;
+    }
+
+    .played-cards-area .card {
+        width: 35px;
+        height: 52px;
+    }
+
+    .opponent-label {
+        font-size: 0.6rem;
+    }
+
+    .player-label {
+        font-size: 0.75rem;
+    }
 }
 
 .nav-active {
